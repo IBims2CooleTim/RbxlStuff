@@ -1,5 +1,5 @@
 -- Gui to Lua
--- Version: 3.2
+-- Version: 3.6
 
 -- Instances:
 
@@ -13,6 +13,8 @@ local TheRake = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 local UIGridLayout = Instance.new("UIGridLayout")
 local UIPadding = Instance.new("UIPadding")
+local Production = Instance.new("NumberValue")
+local Production2 = Instance.new("NumberValue")
 
 --Properties:
 
@@ -73,9 +75,17 @@ UIPadding.Parent = ScrollingFrame
 UIPadding.PaddingLeft = UDim.new(0, 1)
 UIPadding.PaddingRight = UDim.new(0, 1)
 
+Production.Name = "ProductionBuild"
+Production.Parent = ScreenGui
+Production.Value = true
+
+Production2.Name = "ProductionBuild"
+Production2.Parent = ScrollingFrame
+Production2.Value = false
+
 -- Scripts:
 
-local function BQSJ_fake_script() -- ScrollingFrame.LocalScript 
+local function MTII_fake_script() -- ScrollingFrame.LocalScript 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
 	local production = script.Parent.ProductionBuild.Value
@@ -93,4 +103,4 @@ local function BQSJ_fake_script() -- ScrollingFrame.LocalScript
 		end
 	end
 end
-coroutine.wrap(BQSJ_fake_script)()
+coroutine.wrap(MTII_fake_script)()
