@@ -13,8 +13,6 @@ local TheRake = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 local UIGridLayout = Instance.new("UIGridLayout")
 local UIPadding = Instance.new("UIPadding")
-local Production = Instance.new("NumberValue")
-local Production2 = Instance.new("NumberValue")
 
 --Properties:
 
@@ -74,14 +72,6 @@ UIGridLayout.CellSize = UDim2.new(0, 160, 0, 40)
 UIPadding.Parent = ScrollingFrame
 UIPadding.PaddingLeft = UDim.new(0, 1)
 UIPadding.PaddingRight = UDim.new(0, 1)
-
-Production.Name = "ProductionBuild"
-Production.Parent = ScreenGui
-Production.Value = true
-
-Production2.Name = "ProductionBuild"
-Production2.Parent = ScrollingFrame
-Production2.Value = false
 
 -- Scripts:
 
