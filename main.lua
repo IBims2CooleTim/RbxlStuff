@@ -21,8 +21,9 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Background.Name = "Background"
 Background.Parent = ScreenGui
+Background.AnchorPoint = Vector2.new(0.5, 0.5)
 Background.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Background.Position = UDim2.new(0.297077924, 0, 0.256077796, 0)
+Background.Position = UDim2.new(0.5, 0, 0.5, 0)
 Background.Size = UDim2.new(0, 500, 0, 300)
 
 UICorner.Parent = Background
@@ -74,20 +75,22 @@ UIPadding.PaddingRight = UDim.new(0, 1)
 
 -- Scripts:
 
-local function ENKXEUV_fake_script() -- ScrollingFrame.LocalScript 
+local function BQSJ_fake_script() -- ScrollingFrame.LocalScript 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
-	local Http = game:GetService("HttpService")
-	
-	print(loadstring("https://raw.githubusercontent.com/IBims2CooleTim/RbxlStuff/files.lua")())
+	local production = script.Parent.ProductionBuild.Value
 	
 	for i, v in ipairs(script.Parent:GetChildren()) do
 		if v.ClassName == "TextButton" then
 			v.MouseButton1Click:Connect(function()
-				script.Parent.Parent.Parent:Destroy()
 				loadstring("https://raw.githubusercontent.com/IBims2CooleTim/RbxlStuff/"..v.Name..".lua")()
+				if production then
+					script.Parent:Destroy()
+				else
+					script.Parent.Parent.Parent:Destroy()
+				end
 			end)
 		end
 	end
 end
-coroutine.wrap(ENKXEUV_fake_script)()
+coroutine.wrap(BQSJ_fake_script)()
