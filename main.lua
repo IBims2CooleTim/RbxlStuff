@@ -85,22 +85,6 @@ Production2.Value = false
 
 -- Scripts:
 
-local function MTII_fake_script() -- ScrollingFrame.LocalScript 
-	local script = Instance.new('LocalScript', ScrollingFrame)
-
-	local production = script.Parent.ProductionBuild.Value
-	
-	for i, v in ipairs(script.Parent:GetChildren()) do
-		if v.ClassName == "TextButton" then
-			v.MouseButton1Click:Connect(function()
-				loadstring("https://raw.githubusercontent.com/IBims2CooleTim/RbxlStuff/"..v.Name..".lua")()
-				if production then
-					script.Parent:Destroy()
-				else
-					script.Parent.Parent.Parent:Destroy()
-				end
-			end)
-		end
-	end
-end
-coroutine.wrap(MTII_fake_script)()
+TheRake.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/IBims2CooleTim/RbxlStuff/TheRakeV1.lua", true))()
+end)
